@@ -28,10 +28,10 @@ app.use(express.urlencoded({ extended: true }));
 
 
 const configs = {
-	port: 8000, // custom port to access server
-	webhook_url: 'https://rwtest.sman1tual.sch.id/waapi/filewebhook/webhook.php',
-	webhook_group: 'https://rwtest.sman1tual.sch.id/waapi/hookgroup.php',
-	callback_url: 'https://rwtest.sman1tual.sch.id/wa-sysdev/panggil.php' // webhook url
+	port: 8080, // custom port to access server
+	webhook_url: 'https://sman1tual.sch.id/wa/waapi/filewebhook/webhook.php',
+	webhook_group: 'https://sman1tual.sch.id/wa/waapi/hookgroup.php',
+	callback_url: 'https://sman1tual.sch.id/wa/wa-sysdev/panggil.php' // webhook url
 };
 const conn = new WAConnection();
 var execPHP = require('./execphp.js')();
@@ -350,8 +350,8 @@ app.post('/v2/send-media', [
 
 //
 
-server.listen(8000, function(){
-    console.log('App Running on *:' + 8000);
+server.listen(8080, function(){
+    console.log('App Running on *:' + 8080);
 });
 
 conn.on('group-participants-update', m => {
